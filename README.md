@@ -1,6 +1,21 @@
 # Migrating Workspaces
 
+
 ## Migrating from TFE to TFE/TFC
+
+## One Workspace at a Time Using Terraform CLI
+
+You can move a state from one backend to another using the terraform backend block. This can be done to migrate state from one workspace to another, or any remote backend to another.
+
+![state-migration-diagram-cli](/images/state-migration-cli.png)
+
+1. Add the terraform backend block to your terraform code using the picture above as an example. `hostname`, `organization`, and `workspace` should correspend to the location of your existing state in TFC or TFE. If your remote state exists in an S3 bucket, or some other remote backend, refer to the documentation.
+2. Run a `terraform init`
+3. Replace the `hostname`, `organization`, and `workspace` with the new destination to migrate the state to.
+4. Run `terraform init -migrate-state` 
+5. Verify the state exists in the new workspace as expected
+
+## Once Workspace at a Time Using TFE/TFC API
 
 Choose the workspace you wish to migrate from on the source TFE instance.
 
