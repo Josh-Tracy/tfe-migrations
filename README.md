@@ -15,7 +15,7 @@ You can move a state from one backend to another using the terraform backend blo
 4. Run `terraform init -migrate-state` 
 5. Verify the state exists in the new workspace as expected
 
-## Once Workspace at a Time Using TFE/TFC API
+## One Workspace at a Time Using TFE/TFC API
 
 ![state-migration-diagram-api](/images/state-migration-api.png)
 
