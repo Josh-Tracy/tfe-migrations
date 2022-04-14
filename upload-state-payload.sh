@@ -1,5 +1,8 @@
 #!/bin/bash
-echo "[INFO]--- A USER API TOKEN MUST BE USED TO UPLOAD STATE TO A LOCKED WORKSPACE, NOT AN ORG API TPKEN ---[INFO]"
+
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+echo -e $(printf "${GREEN} [INFO]--- A USER API TOKEN MUST BE USED TO UPLOAD STATE TO A LOCKED WORKSPACE, NOT AN ORG API TPKEN ---[INFO] ${ENDCOLOR}")
 read -p "Did you set the TFC_USER_TOKEN envioronment variable yet? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
 read -p "Enter the URL of the TFE/TFC instance. Example: tfe.mydomain.com: " URL
