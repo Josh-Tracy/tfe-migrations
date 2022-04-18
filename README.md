@@ -6,6 +6,7 @@ Migrating from one TFE instance to another TFE instance, from TFE to TFC, or fro
 * Migrating workspaces and configurations, modules, teams, and most other configruation settings can be accomplished using the API. 
 
 ## One Workspace at a Time Using Terraform CLI
+<p>&nbsp;</p>
 
 You can move a state from one backend to another using the terraform backend block. This can be done to migrate state from one workspace to another, or any remote backend to another.
 
@@ -19,6 +20,7 @@ You can move a state from one backend to another using the terraform backend blo
 6. Verify the state exists in the new workspace as expected
 
 ## One Workspace at a Time Using TFE/TFC API
+<p>&nbsp;</p>
 
 ![state-migration-diagram-api1](/images/state-migration-api1.png)
 
@@ -123,7 +125,16 @@ echo $HTTP_RESPONSE
 
 13. Test the config my making a non-destructive resource change to verify proper functionality by running terraform plan.
 
-## Using the Scripts 
+## Using the Scripts
+<p>&nbsp;</p>
+
+### Python
+
+| Script Name | Description |
+|-------------|-------------|
+| migration_script.py | Migration script created by an LPL customer with arguments to migrate orgs, workspaces, teams, any more. |
+
+### Bash
 
 | Script Name | Description |
 |-------------|-------------|
@@ -132,7 +143,21 @@ echo $HTTP_RESPONSE
 | getstate.sh | Downloads the state of the specified workspace into `state.tfstate` |
 | create-state-payload.sh | Creates a `payload.json` for upload to target workspace |
 | upload-state-payload.sh | Uploads the payload to the target workspace |
+| list-all-worksapce-ids.sh | Lists all workspace IDs in a given org |
+| list-all-workspace-names.sh | Lists all workspace names in a given org |
+
 
 # Resources
 
+## Community Resources
+### Employee created migration tool using Terrasnek Python API class
+
+https://github.com/cneralich/tfe-tfc-migration-tool
+
+### Terrasnek Python API Class for TFE/TFC
+https://github.com/dahlke/terrasnek
+
+https://terrasnek.readthedocs.io/en/latest/
+
+## Documentation
 Using cloud-state-api https://learn.hashicorp.com/tutorials/terraform/cloud-state-api?in=terraform/cloud&utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS
