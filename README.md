@@ -125,7 +125,13 @@ echo $HTTP_RESPONSE
 
 ## Using the Scripts 
 
-* TO DO
+| Script Name | Description |
+|-------------|-------------|
+| migrate-state.sh | Migrates state from one specified workspace to another |
+| get-workspace-id.sh | Returns the ID of the specified workspace |
+| getstate.sh | Downloads the state of the specified workspace into `state.tfstate` |
+| create-state-payload.sh | Creates a `payload.json` for upload to target workspace |
+| upload-state-payload.sh | Uploads the payload to the target workspace |
 
 # Resources
 
